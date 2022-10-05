@@ -14,5 +14,9 @@ export const Thing: FC<Props> = ({ children }) => {
   return <div>{children || `the snozzberries taste like snozzberries`}</div>;
 };
 
-export * from './components/DsButton'
-export * from './components/DsCard'
+export * from './components/DsButton';
+export * from './components/DsCard';
+export * from './components/DsTag';
+export * from './components/DsGroupOptions';
+export * from './components/DsField';
+
