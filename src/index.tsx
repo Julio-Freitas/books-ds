@@ -19,4 +19,5 @@ export * from './components/DsCard';
 export * from './components/DsTag';
 export * from './components/DsGroupOptions';
 export * from './components/DsField';
+export * from './components/DsAmount';
 
