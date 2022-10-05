@@ -1,13 +1,16 @@
-import React, { HtmlHTMLAttributes } from 'react';
-import * as S from './style';
+import React from 'react';
+import * as S_ from './style';
+import { IDSButton } from './types';
 
-interface ButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
-    onClick?: () => void;
-}
-export const DsButton = ({ onClick, ...rest }: ButtonProps) => {
+export const DsButton = ({
+  text,
+  typeButton = 'primary',
+  onClick,
+  ...rest
+}: IDSButton) => {
   return (
-    <S.Button type="button" onClick={onClick} {...rest}>
-      Button
-    </S.Button>
+    <S_.Button type="button" typeButton={typeButton} onClick={onClick} {...rest}>
+      {text}
+    </S_.Button>
   );
 };

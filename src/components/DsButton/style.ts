@@ -1,20 +1,38 @@
 import styled from 'styled-components';
-import { Colors } from './types';
+import { Colors, IDSButton } from './types';
 
-export const Button = styled.button`
-  background-color: ${Colors.PRIMARY};
+const isPrimary = (key: string = 'primary') => key && key === 'primary';
+
+export const Button = styled.button<IDSButton>`
+  background-color: ${({ typeButton }) =>
+    isPrimary(typeButton) ? Colors.PRIMARY : Colors.WHITE};
+
   padding: 16px 32px;
-  border: 2px solid ${Colors.PRIMARY};
-  color: #fff;
+  border: 2px solid;
+
+  border-color: ${({ typeButton }) =>
+    isPrimary(typeButton) ? Colors.PRIMARY : Colors.SECONDARY};
+
+  color: ${({ typeButton }) =>
+    isPrimary(typeButton) ? Colors.WHITE : Colors.SECONDARY};
+
   font-size: 20px;
   cursor: pointer;
   border-radius: 3px;
-  transition: ease-in-out .5s;
+  transition: ease-in-out 0.5s;
   font-weight: 600;
   text-transform: capitalize;
 
   &:hover {
-    background-color: ${Colors.HOVER_PRIMARY} ;
-    border: 2px solid ${Colors.HOVER_PRIMARY};
+    ${({ typeButton }) =>
+      isPrimary(typeButton)
+        ? `
+        background-color:${Colors.HOVER};
+        border-color:${Colors.HOVER};
+        `
+        : `
+        border-color:  ${Colors.HOVER};
+        color:${Colors.HOVER};
+    `}
   }
 `;
