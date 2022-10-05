@@ -7,8 +7,8 @@ import { DsButton } from '..';
 describe('<DsButton />', () => {
   it('Should be render correctly', async () => {
     const fnClick = jest.fn();
-    const { getByRole } = render(<DsButton onClick={fnClick} />);
-    const button = screen.getByRole('button', { name: 'Button' });
+    const { getByRole } = render(<DsButton onClick={fnClick} text="Button Name" />);
+    const button = screen.getByRole('button', { name: /Button Name/gi });
 
     userEvent.click(getByRole('button'));
     expect(fnClick).toBeCalledTimes(0);
