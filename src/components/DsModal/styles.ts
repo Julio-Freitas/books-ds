@@ -5,7 +5,7 @@ export const Layer = styled.div`
   position: fixed;
   inset: 0;
   background: rgba(101, 101, 101, 0.85);
-  z-index: 0;
+  z-index: 1;
   display: flex;
 `;
 
