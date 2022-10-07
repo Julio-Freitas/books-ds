@@ -9,7 +9,7 @@ export const Layer = styled.div`
   display: flex;
 `;
 
-export const Screen = styled.div<Pick<IDsModal, 'widthScreen'>>`
+export const Screen = styled.div<Pick<IDsModal, 'widthScreen' | 'heightScreen'>>`
   z-index: 999;
   position: fixed;
   padding: 64px;
@@ -20,6 +20,8 @@ export const Screen = styled.div<Pick<IDsModal, 'widthScreen'>>`
   left: 50%;
   transform: translate(-50%, -50%);
   width: ${props => `${props.widthScreen}px` ?? '90%'};
+  max-height:  ${props => `${props.heightScreen}px` ?? 'fit-content;'};
+  overflow-y: auto;
 `;
 
 export const TitleModalWrapper = styled.div`

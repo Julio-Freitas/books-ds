@@ -5,5 +5,6 @@ export interface IDsModal {
     title?: string,
     status: 'open' | 'close',
     onClose?: () => void,
-    widthScreen?: number
+    widthScreen?: number,
+    heightScreen?: number
 }

@@ -20,5 +20,4 @@ Default.args = {
   title: 'Title',
   onClose: console.log,
   status: 'open',
-  widthScreen: 100
 } as IDsModal;
