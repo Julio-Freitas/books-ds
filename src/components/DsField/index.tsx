@@ -14,7 +14,6 @@ export const DsField = ({
     <S_.Input
       type={type}
       name="name"
-      id="name"
       placeholder="Seu Placeholder Aqui..."
       onChange={({ target }) => onChangeValue(target.value)}
       value={text}
