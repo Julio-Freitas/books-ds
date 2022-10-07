@@ -4,5 +4,6 @@ export interface IDsModal {
     children?: ReactNode,
     title?: string,
     status: 'open' | 'close',
-    onClose?: () => void
+    onClose?: () => void,
+    widthScreen?: number
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IDsModal } from './types';
 
 export const Layer = styled.div`
   position: fixed;
@@ -8,8 +9,8 @@ export const Layer = styled.div`
   display: flex;
 `;
 
-export const Screen = styled.div`
-  z-index: 1;
+export const Screen = styled.div<Pick<IDsModal, 'widthScreen'>>`
+  z-index: 999;
   position: fixed;
   padding: 64px;
   background: #ffffff;
@@ -18,7 +19,7 @@ export const Screen = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: ${props => `${props.widthScreen}px` ?? '90%'};
 `;
 
 export const TitleModalWrapper = styled.div`
@@ -41,7 +42,7 @@ export const ButtonCloseModal = styled.button`
   cursor: pointer;
   color: #002f52;
   margin-left: 10px;
-  transition: all .5s;
+  transition: all 0.5s;
 
   :hover {
     color: #002a50;
